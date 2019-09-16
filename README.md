@@ -11,6 +11,7 @@ The tool is built for internal use at our labs, but feel free to modify and dist
 * This package was made for ```pupil capture 1.14.9```; Using newer versions of pupil may very well break, and we have precedence to believe that caution should be exercised.
 * The tool was built in python 3, specifically for use with psychopy 3.4; You may find varying success or convenience using this in other python environments.
 * You will need ZMQ to communicate with pupil capture.
+* You will need msgpack to use notifications.
 
 ## Use
 
