@@ -1,6 +1,6 @@
 # Eye Socket - A Pupil-Labs Recorder Socket
 
-This is a simple python class that handles all communications with Pupil-Labs trackers through the ZMQ library. Nothing fancy here, just a more convenient copy of pupil labs' own helper script.
+This is a simple python class that handles all communications with Pupil-Labs trackers through the ZMQ library. Nothing fancy here, just a more convenient copy of pupil labs' own helper script and my previous implementation, [pupil_middleman](https://github.com/mtaung/pupil_middleman). 
 
 The tool is built for internal use at our labs, but feel free to modify and distribute as you wish.
 
@@ -40,3 +40,8 @@ The class handles the initialisation of the ZMQ socket. The address for this wil
 ```set_time()```: Sets the time on the pupil trackers. By default, pupil trackers will use UNIX epoch timestamps. You can leave it as is and normalise them after the fact; I personally find this more informative in my work.  
 
 ```notify()```: This is the way pupil handles 'triggers'. Note that I haven't tested this particular method yet, so it likely breaks. It would generally be better protocol to record any internal data for your experiment through psychopy rather than pupil. I use this when working with stimulus that do not have convenient native means to generate data.
+
+## TODO
+
+* Validate notify()
+* Implement previously used middleman functionality i.e. pure py sockets for interfacing with tools that do not utilise ZMQ. 
