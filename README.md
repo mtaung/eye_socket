@@ -13,6 +13,14 @@ The tool is built for internal use at our labs, but feel free to modify and dist
 * You will need ZMQ to communicate with pupil capture.
 * You will need msgpack to use notifications.
 
+### Setup & Import
+
+This repository is prepared as a package that you can easily install using pip:
+
+~~~ 
+pip install git+https://github.com/mtaung/pupil_socket.git 
+~~~
+
 ## Use
 
 The class handles the initialisation of the ZMQ socket. The address for this will default to localhost:50020, as these are the defaults for pupil-labs systems.
