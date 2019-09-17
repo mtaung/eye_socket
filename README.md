@@ -21,6 +21,8 @@ This repository is prepared as a package that you can easily install using pip:
 pip install git+https://github.com/mtaung/pupil_socket.git 
 ~~~
 
+You will notice that ```__init__.py``` in ```pupil_socket``` automatically imports the ZMQsocket class. This is because I prefer to access the class directly. You may want to change this before installing into your environment. 
+
 ## Use
 
 The class handles the initialisation of the ZMQ socket. The address for this will default to localhost:50020, as these are the defaults for pupil-labs systems.
