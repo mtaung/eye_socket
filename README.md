@@ -1,4 +1,4 @@
-# Pupil-Labs Recorder Socket
+# Eye Socket - A Pupil-Labs Recorder Socket
 
 This is a simple python class that handles all communications with Pupil-Labs trackers through the ZMQ library. Nothing fancy here, just a more convenient copy of pupil labs' own helper script.
 
