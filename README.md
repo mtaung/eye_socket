@@ -1,6 +1,6 @@
-# Pupil-Labs Recorder Socket
+# Eye Socket - A Pupil-Labs Recorder Socket
 
-This is a simple python class that handles all communications with Pupil-Labs trackers through the ZMQ library. Nothing fancy here, just a more convenient copy of pupil labs' own helper script.
+This is a simple python class that handles all communications with Pupil-Labs trackers through the ZMQ library. Nothing fancy here, just a more convenient copy of pupil labs' own helper script and my previous implementation, [pupil_middleman](https://github.com/mtaung/pupil_middleman). 
 
 The tool is built for internal use at our labs, but feel free to modify and distribute as you wish.
 
@@ -42,3 +42,9 @@ The class handles the initialisation of the ZMQ socket. The address for this wil
 ```set_time()```: Sets the time on the pupil trackers. By default, pupil clock is not fixed. We presently synchronise our clocks manually at the start of a recording session and align data post-hoc; I personally find this more informative in my work. For those that need consistent realtime sync, I am looking to implement Pupil-Labs' own time sync functionality in the future.
 
 ```notify()```: This functionality is currently incomplete and requires some further work to get going. If you're interested in this or have done so before, feel free to submit a PR.
+
+## TODO
+
+* Validate a generic notify() function
+* Implement previously used middleman functionality i.e. pure py sockets for interfacing with tools that do not utilise ZMQ. 
+* Implement time sync appropriately
