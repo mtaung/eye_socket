@@ -6,12 +6,14 @@ The tool is built for internal use at our labs, but feel free to modify and dist
 
 ## Installation
 
-### Dependencies
+## Dependencies
 
 * This package was made for ```pupil capture 1.14.9```; Using newer versions of pupil may very well break, and we have precedence to believe that caution should be exercised.
 * The tool was built in python 3, specifically for use with psychopy 3.4; You may find varying success or convenience using this in other python environments.
-* You will need ZMQ to communicate with pupil capture.
-* You will need msgpack to use notifications.
+* You will need ```ZMQ``` and ```msgpack``` to communicate with pupil capture and to to use notifications. This can be accomplished with the ```requirements.txt``` file in this package via:
+~~~
+pip install -r requirements.txt
+~~~
 
 ### Setup & Import
 
@@ -33,10 +35,10 @@ The class handles the initialisation of the ZMQ socket. The address for this wil
 
 ```stop_calibration()```: Stops the pupil calibration procedure. This shouldn't be necessary if the calibration is completed properly.
 
-```start_recordign()```: Starts a pupil recording. You can optionally input a directory name into the parameter ```dir_name```, which will rename the master directory of any recordings under this title.
+```start_recording()```: Starts a pupil recording. You can optionally input a directory name into the parameter ```dir_name```, which will rename the master directory of any recordings under this title.
 
 ```stop_recording()```: Stops a recording when specified. You will want to run this to ensure that your recorded data have complete headers.
 
-```set_time()```: Sets the time on the pupil trackers. By default, pupil trackers will use UNIX epoch timestamps. You can leave it as is and normalise them after the fact; I personally find this more informative in my work.  
+```set_time()```: Sets the time on the pupil trackers. By default, pupil clock is not fixed. We presently synchronise our clocks manually at the start of a recording session and align data post-hoc; I personally find this more informative in my work. For those that need consistent realtime sync, I am looking to implement Pupil-Labs' own time sync functionality in the future.
 
-```notify()```: This is the way pupil handles 'triggers'. Note that I haven't tested this particular method yet, so it likely breaks. It would generally be better protocol to record any internal data for your experiment through psychopy rather than pupil. I use this when working with stimulus that do not have convenient native means to generate data.
+```notify()```: This functionality is currently incomplete and requires some further work to get going. If you're interested in this or have done so before, feel free to submit a PR.
